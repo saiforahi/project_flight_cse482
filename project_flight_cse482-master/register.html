@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="text/javascript">
+        function matchpass(){
+            let  firstpassword=document.getElementById('password').value;
+            console.log(firstpassword);
+            let secondpassword=document.getElementById('re-password').value;
+            console.log(secondpassword);
+            let span = document.getElementById('passAlert');
+            if(firstpassword==secondpassword){
+                span.innerHTML = 'Password matched!';
+                span.classList.remove('text-danger');
+                span.classList.add("text-success");
+                return true;
+            }
+            else{
+                span.innerHTML = 'Password does not match!';
+                span.classList.remove("text-success");
+                span.classList.add("text-danger")
+                return false;
+            }
+        }
+        function validEmail() {
+            let mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            let inputText = document.getElementById('email');
+            let span = document.getElementById('emailVerify');
+            if(inputText.value.match(mailFormat))
+            {
+                span.innerHTML = 'you have entered valid email!';
+                span.classList.remove("text-danger");
+                span.classList.add("text-primary");
+                return true;
+            }
+            else {
+                span.innerHTML = 'you have entered invalid email!';
+                span.classList.remove("text-primary");
+                span.classList.add("text-danger");
+                return false;
+            }
+        }
+        function validPhone() {
+            let mailFormat = /^[0-1]{2}?[3-8][0-9]{8}$/;
+            let inputText = document.getElementById('phone_number');
+            let span = document.getElementById('phone_numberVerify');
+            if(inputText.value.match(mailFormat))
+            {
+                span.innerHTML = 'you have entered valid Mobile number!';
+                span.classList.remove('text-danger');
+                span.classList.add("text-success")
+                return true;
+            }
+            else {
+                span.innerHTML = 'you have entered invalid Mobile number!';
+                span.classList.remove("text-success");
+                span.classList.add("text-danger")
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+
+
+
+
+<!-- Start :- Registration form -->
+
+<section class="registration_login_form">
+    <div class="form_container p-3">
+        <div class="container bg-dark">
+            <div class="row">
+                <div class="logo">
+                    <a href="index.html"><img src="assets/img/124351305_458995281734152_7775837977380884803_n.png" alt="" style="width: 60px; height: 60px;"></a>
+                </div>
+                <div class="col-md-9">
+                    <h4 class="text-center text-light font-weight-bold" style="margin-top: 20px; margin-bottom: 0px">Welcome!</h4>
+                </div>
+                <hr style="margin-top: 0px;">
+            </div>
+
+                <form class="overflow-auto" name="register" onsubmit="matchpass(),validEmail(),validPhone();" action="#">
+                    <div class="form-group">
+                        <label for="name" class="text-light font-weight-bold">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Mr. Xyz" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="text-light font-weight-bold">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        <span id="emailVerify"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone_number" class="text-light font-weight-bold">Phone</label>
+                        <input type="text" class="form-control" id="phone_number" placeholder="017XXXXXXXXX" min="11" required>
+                        <span id="phone_numberVerify"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="text-light font-weight-bold">Password</label>
+                        <input type="password" class="form-control" id="password" min="8" required>
+                        <span id="passAlert"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="re-password" class="text-light font-weight-bold">Retype Password</label>
+                        <input type="password" class="form-control" id="re-password" min="8" required>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mb-4">sign up!</button>
+                </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- End :- Registration form -->
+
+
+
+
+
+
+
+
+
+
+<!-- Start :- Login form -->
+
+<!-- <section class="registration_login_form">
+    <div class="form_container">
+        <div class="header_container">
+            <div class="logo">
+                <img src="./img/124351305_458995281734152_7775837977380884803_n.png" alt="">
+            </div>
+            <div class="welcome">
+                <h1>Welcome!</h1>
+            </div>
+        </div>
+        <form action="#">
+            <input placeholder="Enter your email" type="email">
+            <input placeholder="Enter your password" type="password">
+            <button>Login</button>
+            <a href="#">Create account</a>
+        </form>
+        <div class="forget">
+            <a href="#">Forget password</a>
+        </div>
+    </div>
+</section> -->
+
+<!-- End :- Login form -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>
