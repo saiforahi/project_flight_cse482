@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <script type="text/javascript">
+        const do_search=(value)=>{
+            if(!value||value==""||value===undefined||value.length<=0){
+                alert('No keyword to search');
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Start :- Searching flights results -->
+
+    <section class="search_flights">
+        <div class="header">
+            <div class="logo">
+                <img src="./assets/img/124351305_458995281734152_7775837977380884803_n.png" alt="">
+            </div>
+            <div class="search">
+                <form action="#" name="search_form">
+                    <input type="text" name="search_input" id="search_input" placeholder="Search here">
+                    <button type="button" onclick="do_search(document.getElementById('search_input').value)">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="body">
+            <div class="form_container">
+                <div class="form_header">
+                    <h1>Search List</h1>
+                </div>
+                <div class="search_list_container">
+                    <div class="available_sits">
+                        <h1>Seats available</h1>
+                    </div>
+                    <div class="flights">
+                        <table>
+                            <tr>
+                              <th>Flights</th>
+                              <th>Bussiness</th>
+                              <th>Economy</th>
+                            </tr>
+                            <!-- <tr>
+                              <td>Flight name</td>
+                              <td>1</td>
+                              <td>1</td>
+                            </tr> -->
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End :- Searching flights results -->
+
+</body>
+</html>

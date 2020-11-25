@@ -191,14 +191,14 @@ body{
     justify-content: center;
 }
 .registration_login_form .form_container form{
-    width: calc(100% - 40px);
+    
     padding: 0px 20px;
     position: relative;
     top: -50px;
     left: 0;
 }
 .registration_login_form .form_container form input{
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 0px 10px;
     height: 45px;
     margin-bottom: 10px;
@@ -211,20 +211,21 @@ body{
 .registration_login_form .form_container form input::placeholder{
     color: white;
 }
-.registration_login_form .form_container form button{
+.registration_login_form .form_container form button {
     width: 100%;
-    height: 45px;
     text-align: center;
-    line-height: 45px;
-    background-color: black;
+    background-color: white;
     border-radius: 10px;
-    cursor: pointer;
     font-weight: 700;
     font-size: 1.3rem;
-    border: none;
     outline: none;
-    color: white;
+    color: black;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
+.registration_login_form .form_container form button:hover{
+    color: rgba(0,123,255,.25);
+}
+
 .registration_login_form .form_container form a{
     display: inline-block;
     text-decoration: none;
