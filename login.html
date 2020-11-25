@@ -20,7 +20,7 @@
                 document.getElementById('email_text').classList="text-success";
                 document.getElementById('email_text').innerHTML="Valid Email input";
             }
-            if(!password||password==""||password===undefined || password<6){
+            if(!password||password==""||password===undefined || password.length<6){
                 formIsValid=false;
                 document.getElementById('pass_text').classList="text-danger";
                 document.getElementById('pass_text').innerHTML="Invalid password input";
